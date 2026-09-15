@@ -1,0 +1,421 @@
+{
+  "users": [
+    {
+      "_id": "83081f960f4f9c45374f8306",
+      "name": "Bank Administrator",
+      "email": "admin@example.com",
+      "password": "$2a$10$jYKQy37UfJahsUKiqE1ap.IS.GxLvyNFEiA3DyD73QWBtT4fnpJoi",
+      "role": "admin",
+      "status": "active",
+      "failedLoginAttempts": 0,
+      "createdAt": "2026-09-10T17:50:18.342Z",
+      "updatedAt": "2026-09-13T15:48:14.430Z"
+    },
+    {
+      "_id": "26d4eaf2d9ad4749f492a227",
+      "name": "Alice Henderson (User A)",
+      "email": "usera@example.com",
+      "password": "$2a$10$GN6PEbF7RXoaf1yVGYL3QOgKN4ggp8RyWbuqVH9yat8/mf/jFNmAG",
+      "role": "customer",
+      "status": "active",
+      "failedLoginAttempts": 0,
+      "createdAt": "2026-09-10T17:50:18.779Z",
+      "updatedAt": "2026-09-13T18:42:50.855Z"
+    },
+    {
+      "_id": "5c5637eae9ac0fc388318c68",
+      "name": "Bob Montgomery (User B)",
+      "email": "userb@example.com",
+      "password": "$2a$10$I0U1jD/6ADBYQkMazj/wOu7DhS8WRUEe5xjOvJymg6z1U6pQf3py6",
+      "role": "customer",
+      "status": "active",
+      "failedLoginAttempts": 0,
+      "createdAt": "2026-09-10T17:50:19.028Z",
+      "updatedAt": "2026-09-10T18:09:39.258Z"
+    }
+  ],
+  "accounts": [
+    {
+      "_id": "b4886c36a0b27b7d95dacb5f",
+      "accountNumber": "1000001234",
+      "accountType": "joint",
+      "owners": [
+        "26d4eaf2d9ad4749f492a227",
+        "5c5637eae9ac0fc388318c68"
+      ],
+      "balance": 101000,
+      "status": "active",
+      "createdAt": "2026-09-10T17:50:19.031Z",
+      "updatedAt": "2026-09-10T18:10:19.793Z"
+    },
+    {
+      "_id": "56987ad047a9331e64a522fd",
+      "accountNumber": "1000004321",
+      "accountType": "individual",
+      "owners": [
+        "26d4eaf2d9ad4749f492a227"
+      ],
+      "balance": 15000,
+      "status": "active",
+      "createdAt": "2026-09-10T17:50:19.037Z",
+      "updatedAt": "2026-09-10T18:10:19.204Z"
+    },
+    {
+      "_id": "c0cbca0804706cd0766bf087",
+      "accountNumber": "1000008899",
+      "accountType": "individual",
+      "owners": [
+        "5c5637eae9ac0fc388318c68"
+      ],
+      "balance": 25000,
+      "status": "active",
+      "createdAt": "2026-09-10T17:50:19.038Z",
+      "updatedAt": "2026-09-10T18:10:18.764Z"
+    },
+    {
+      "_id": "ed2bb5aa3d4fd47375228baf",
+      "accountNumber": "1000602487",
+      "accountType": "individual",
+      "owners": [
+        "26d4eaf2d9ad4749f492a227"
+      ],
+      "balance": 10000,
+      "status": "active",
+      "createdAt": "2026-09-13T18:43:26.900Z",
+      "updatedAt": "2026-09-13T18:43:26.900Z"
+    }
+  ],
+  "transactions": [
+    {
+      "_id": "d1c5f7959701a9b1f85c306a",
+      "transactionId": "TXN-INIT-0001",
+      "senderAccount": "56987ad047a9331e64a522fd",
+      "receiverAccount": "b4886c36a0b27b7d95dacb5f",
+      "amount": 5000,
+      "transactionType": "normal",
+      "state": "COMPLETED",
+      "initiatedBy": "26d4eaf2d9ad4749f492a227",
+      "description": "Initial joint account contribution",
+      "secretVisualHash": null,
+      "authorizations": [],
+      "expiresAt": null,
+      "createdAt": "2026-09-10T17:50:19.041Z",
+      "updatedAt": "2026-09-10T17:50:19.041Z"
+    },
+    {
+      "_id": "fdd10b24f0faa02884250ebe",
+      "transactionId": "TXN-20260910-19241974",
+      "senderAccount": "56987ad047a9331e64a522fd",
+      "receiverAccount": "c0cbca0804706cd0766bf087",
+      "amount": 10000,
+      "transactionType": "normal",
+      "state": "COMPLETED",
+      "initiatedBy": "26d4eaf2d9ad4749f492a227",
+      "description": "Payment for services",
+      "secretVisualHash": null,
+      "authorizations": [
+        {
+          "userId": "26d4eaf2d9ad4749f492a227",
+          "status": "APPROVED",
+          "authorizedAt": "2026-09-10T18:09:10.308Z",
+          "shareProvided": true
+        }
+      ],
+      "expiresAt": null,
+      "createdAt": "2026-09-10T18:09:10.310Z",
+      "updatedAt": "2026-09-10T18:09:10.310Z"
+    }
+  ],
+  "visual_shares": [],
+  "audit_logs": [
+    {
+      "_id": "5b059950f1605fa785076214",
+      "userId": "83081f960f4f9c45374f8306",
+      "userEmail": "admin@example.com",
+      "action": "LOGIN_SUCCESS",
+      "result": "SUCCESS",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "System",
+      "metadata": {
+        "client": "Chrome 124.0 / Win11"
+      },
+      "createdAt": "2026-09-10T17:50:19.044Z",
+      "updatedAt": "2026-09-10T17:50:19.044Z"
+    },
+    {
+      "_id": "ae74b7dbcfd9181de256e19a",
+      "userId": "26d4eaf2d9ad4749f492a227",
+      "userEmail": "usera@example.com",
+      "action": "TRANSACTION_CREATED",
+      "transactionId": "TXN-INIT-0001",
+      "result": "SUCCESS",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "System",
+      "metadata": {
+        "amount": 5000,
+        "type": "normal"
+      },
+      "createdAt": "2026-09-10T17:50:19.044Z",
+      "updatedAt": "2026-09-10T17:50:19.044Z"
+    },
+    {
+      "_id": "570c45320ec8d3c11b6d18f5",
+      "userId": "26d4eaf2d9ad4749f492a227",
+      "userEmail": "usera@example.com",
+      "action": "LOGIN_SUCCESS",
+      "result": "SUCCESS",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+      "metadata": {},
+      "createdAt": "2026-09-10T18:08:20.428Z",
+      "updatedAt": "2026-09-10T18:08:20.428Z"
+    },
+    {
+      "_id": "a5501e6f4f15b58b42bf30a9",
+      "userId": "26d4eaf2d9ad4749f492a227",
+      "userEmail": "usera@example.com",
+      "action": "TRANSACTION_CREATED",
+      "transactionId": "TXN-20260910-19241974",
+      "result": "SUCCESS",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+      "metadata": {
+        "amount": 10000,
+        "senderAccount": "1000004321",
+        "receiverAccount": "1000008899",
+        "type": "normal"
+      },
+      "createdAt": "2026-09-10T18:09:10.312Z",
+      "updatedAt": "2026-09-10T18:09:10.312Z"
+    },
+    {
+      "_id": "1a4aa15736bae84156cba55c",
+      "userId": "26d4eaf2d9ad4749f492a227",
+      "userEmail": "usera@example.com",
+      "action": "LOGOUT",
+      "result": "SUCCESS",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+      "metadata": {},
+      "createdAt": "2026-09-10T18:09:36.062Z",
+      "updatedAt": "2026-09-10T18:09:36.062Z"
+    },
+    {
+      "_id": "6e6a4745c4fe6515635032bd",
+      "userId": "5c5637eae9ac0fc388318c68",
+      "userEmail": "userb@example.com",
+      "action": "LOGIN_SUCCESS",
+      "result": "SUCCESS",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+      "metadata": {},
+      "createdAt": "2026-09-10T18:09:39.272Z",
+      "updatedAt": "2026-09-10T18:09:39.272Z"
+    },
+    {
+      "_id": "af998870e5f6bf8f7a5940e8",
+      "userId": "5c5637eae9ac0fc388318c68",
+      "userEmail": "userb@example.com",
+      "action": "LOGOUT",
+      "result": "SUCCESS",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+      "metadata": {},
+      "createdAt": "2026-09-10T18:09:45.271Z",
+      "updatedAt": "2026-09-10T18:09:45.271Z"
+    },
+    {
+      "_id": "4d97f994d6a2a46aa3810e16",
+      "userId": "83081f960f4f9c45374f8306",
+      "userEmail": "admin@example.com",
+      "action": "LOGIN_SUCCESS",
+      "result": "SUCCESS",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+      "metadata": {},
+      "createdAt": "2026-09-10T18:09:47.911Z",
+      "updatedAt": "2026-09-10T18:09:47.911Z"
+    },
+    {
+      "_id": "4860038c8006f17681999517",
+      "userId": "83081f960f4f9c45374f8306",
+      "userEmail": "admin@example.com",
+      "action": "ACCOUNT_FROZEN",
+      "result": "SUCCESS",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+      "metadata": {
+        "accountId": "c0cbca0804706cd0766bf087",
+        "accountNumber": "1000008899",
+        "previousStatus": "active",
+        "newStatus": "frozen"
+      },
+      "createdAt": "2026-09-10T18:10:15.684Z",
+      "updatedAt": "2026-09-10T18:10:15.684Z"
+    },
+    {
+      "_id": "f707e5740f2e0d23ec402c4a",
+      "userId": "83081f960f4f9c45374f8306",
+      "userEmail": "admin@example.com",
+      "action": "ACCOUNT_FROZEN",
+      "result": "SUCCESS",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+      "metadata": {
+        "accountId": "56987ad047a9331e64a522fd",
+        "accountNumber": "1000004321",
+        "previousStatus": "active",
+        "newStatus": "frozen"
+      },
+      "createdAt": "2026-09-10T18:10:16.631Z",
+      "updatedAt": "2026-09-10T18:10:16.631Z"
+    },
+    {
+      "_id": "f25c3faf20616e3bd2dd0b12",
+      "userId": "83081f960f4f9c45374f8306",
+      "userEmail": "admin@example.com",
+      "action": "ACCOUNT_FROZEN",
+      "result": "SUCCESS",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+      "metadata": {
+        "accountId": "b4886c36a0b27b7d95dacb5f",
+        "accountNumber": "1000001234",
+        "previousStatus": "active",
+        "newStatus": "frozen"
+      },
+      "createdAt": "2026-09-10T18:10:17.314Z",
+      "updatedAt": "2026-09-10T18:10:17.314Z"
+    },
+    {
+      "_id": "b29aaeb60badba22616f3304",
+      "userId": "83081f960f4f9c45374f8306",
+      "userEmail": "admin@example.com",
+      "action": "ACCOUNT_UNFROZEN",
+      "result": "SUCCESS",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+      "metadata": {
+        "accountId": "c0cbca0804706cd0766bf087",
+        "accountNumber": "1000008899",
+        "previousStatus": "frozen",
+        "newStatus": "active"
+      },
+      "createdAt": "2026-09-10T18:10:18.765Z",
+      "updatedAt": "2026-09-10T18:10:18.765Z"
+    },
+    {
+      "_id": "4831ceb501db4fb64e32f497",
+      "userId": "83081f960f4f9c45374f8306",
+      "userEmail": "admin@example.com",
+      "action": "ACCOUNT_UNFROZEN",
+      "result": "SUCCESS",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+      "metadata": {
+        "accountId": "56987ad047a9331e64a522fd",
+        "accountNumber": "1000004321",
+        "previousStatus": "frozen",
+        "newStatus": "active"
+      },
+      "createdAt": "2026-09-10T18:10:19.205Z",
+      "updatedAt": "2026-09-10T18:10:19.205Z"
+    },
+    {
+      "_id": "6c36bc5009a25171ef152e00",
+      "userId": "83081f960f4f9c45374f8306",
+      "userEmail": "admin@example.com",
+      "action": "ACCOUNT_UNFROZEN",
+      "result": "SUCCESS",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+      "metadata": {
+        "accountId": "b4886c36a0b27b7d95dacb5f",
+        "accountNumber": "1000001234",
+        "previousStatus": "frozen",
+        "newStatus": "active"
+      },
+      "createdAt": "2026-09-10T18:10:19.794Z",
+      "updatedAt": "2026-09-10T18:10:19.795Z"
+    },
+    {
+      "_id": "55dee8ddb362d0bc3383d679",
+      "userId": "26d4eaf2d9ad4749f492a227",
+      "userEmail": "usera@example.com",
+      "action": "LOGIN_SUCCESS",
+      "result": "SUCCESS",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+      "metadata": {},
+      "createdAt": "2026-09-13T15:33:27.987Z",
+      "updatedAt": "2026-09-13T15:33:27.987Z"
+    },
+    {
+      "_id": "b8dcb87ced69747e84a9c138",
+      "userId": "26d4eaf2d9ad4749f492a227",
+      "userEmail": "usera@example.com",
+      "action": "LOGIN_SUCCESS",
+      "result": "SUCCESS",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+      "metadata": {},
+      "createdAt": "2026-09-13T15:44:06.788Z",
+      "updatedAt": "2026-09-13T15:44:06.788Z"
+    },
+    {
+      "_id": "84b50aa694dda6984dced5be",
+      "userId": "83081f960f4f9c45374f8306",
+      "userEmail": "admin@example.com",
+      "action": "LOGIN_SUCCESS",
+      "result": "SUCCESS",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+      "metadata": {},
+      "createdAt": "2026-09-13T15:48:14.507Z",
+      "updatedAt": "2026-09-13T15:48:14.507Z"
+    },
+    {
+      "_id": "c89947988eb628f643fe5210",
+      "userId": "26d4eaf2d9ad4749f492a227",
+      "userEmail": "usera@example.com",
+      "action": "LOGIN_SUCCESS",
+      "result": "SUCCESS",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+      "metadata": {},
+      "createdAt": "2026-09-13T18:42:50.904Z",
+      "updatedAt": "2026-09-13T18:42:50.904Z"
+    },
+    {
+      "_id": "4eff191f2dbbace60673845f",
+      "userId": "26d4eaf2d9ad4749f492a227",
+      "userEmail": "usera@example.com",
+      "action": "ADMIN_ACTION",
+      "result": "SUCCESS",
+      "ipAddress": "::ffff:127.0.0.1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+      "metadata": {
+        "actionType": "ACCOUNT_CREATED",
+        "accountId": "ed2bb5aa3d4fd47375228baf",
+        "accountNumber": "1000602487",
+        "accountType": "individual"
+      },
+      "createdAt": "2026-09-13T18:43:26.945Z",
+      "updatedAt": "2026-09-13T18:43:26.945Z"
+    }
+  ],
+  "security_events": [
+    {
+      "_id": "e5ca3380649a85388f7e106c",
+      "eventType": "FAILED_LOGIN",
+      "severity": "LOW",
+      "userEmail": "unauthorized_attacker@darkweb.org",
+      "ipAddress": "127.0.0.1",
+      "details": {
+        "reason": "Incorrect credentials for unknown identity"
+      },
+      "createdAt": "2026-09-10T17:50:19.053Z",
+      "updatedAt": "2026-09-10T17:50:19.053Z"
+    }
+  ]
+}
